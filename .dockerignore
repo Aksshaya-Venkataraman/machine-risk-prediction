@@ -1,0 +1,18 @@
+# Only source code goes into images - never secrets, git history or local data.
+.git
+.github
+.env
+.env.*
+**/__pycache__
+**/*.pyc
+**/.pytest_cache
+.ruff_cache
+.venv
+venv
+artifacts
+data
+**/tests
+conftest.py
+*.md
+deploy
+scripts

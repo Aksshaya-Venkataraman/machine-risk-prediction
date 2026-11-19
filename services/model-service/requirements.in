@@ -1,0 +1,12 @@
+# Direct dependencies of the model service. Regenerate the lock file with:
+#   uv pip compile services/model-service/requirements.in --generate-hashes \
+#     --python-version 3.13 --python-platform x86_64-unknown-linux-gnu -o services/model-service/requirements.txt
+fastapi==0.165.0
+uvicorn==0.54.0
+pydantic==2.14.4
+pydantic-settings==2.16.3
+prometheus-client==0.26.0
+scikit-learn==1.9.1
+pandas==3.1.1
+numpy==2.5.5
+joblib==1.6.0

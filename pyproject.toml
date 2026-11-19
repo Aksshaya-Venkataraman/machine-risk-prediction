@@ -1,0 +1,32 @@
+[project]
+name = "machine-risk-prediction"
+version = "1.0.0"
+description = "Machine risk classification with two FastAPI microservices"
+requires-python = ">=3.12"
+license = "MIT"
+
+[tool.pytest.ini_options]
+addopts = "-q --import-mode=importlib"
+pythonpath = [".", "services/model-service", "services/gateway", "services/gateway/tests"]
+testpaths = ["ml/tests", "services/model-service/tests", "services/gateway/tests"]
+filterwarnings = ["error::DeprecationWarning:gateway.*", "error::DeprecationWarning:model_service.*"]
+
+[tool.coverage.run]
+source = ["ml", "services/model-service/model_service", "services/gateway/gateway"]
+omit = ["*/tests/*", "*/migrations/*"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+extend-exclude = ["services/gateway/migrations"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "S", "SIM", "RUF"]
+ignore = ["B008", "RUF012"]
+
+[tool.ruff.lint.per-file-ignores]
+"**/tests/**" = ["S101", "S105", "S106"]
+"conftest.py" = ["S105"]
+
+[tool.bandit]
+exclude_dirs = ["tests", "ml/tests", ".venv"]

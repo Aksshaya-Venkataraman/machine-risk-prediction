@@ -1,0 +1,16 @@
+# Direct dependencies of the gateway. Regenerate the lock file with:
+#   uv pip compile services/gateway/requirements.in --generate-hashes \
+#     --python-version 3.13 --python-platform x86_64-unknown-linux-gnu -o services/gateway/requirements.txt
+fastapi==0.165.0
+uvicorn==0.54.0
+pydantic==2.14.4
+pydantic-settings==2.16.3
+email-validator==2.4.0
+sqlalchemy==2.1.9
+psycopg[binary]==3.3.9
+alembic==1.20.1
+httpx2==2.16.2
+prometheus-client==0.26.0
+argon2-cffi==25.1.0
+pyjwt==2.15.1
+limits[redis]==5.8.0
