@@ -16,3 +16,4 @@ conftest.py
 *.md
 deploy
 scripts
+*.rdb
