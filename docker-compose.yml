@@ -101,7 +101,7 @@ services:
 
   redis:
     <<: *hardening
-    image: redis:7-alpine
+    image: redis:8-alpine
     command: ["redis-server", "--requirepass", "${REDIS_PASSWORD:?}", "--save", "", "--appendonly", "no"]
     environment:
       REDISCLI_AUTH: ${REDIS_PASSWORD:?}
